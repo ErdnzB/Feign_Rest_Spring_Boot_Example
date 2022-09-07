@@ -1,0 +1,35 @@
+server:
+  port: 9026
+
+spring:
+  profiles:
+    active: test
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    platform: h2
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    conole:
+      enabled: true
+  jackson:
+    time-zone: Asia/Baku
+    default-property-inclusion: always
+
+kafka:
+  topic:
+    campaignProcessTopic: campaignProcessQueue
+  address: localhost:29092
+
+campaign-admin-service:
+  url: http://localhost:9025
+
+
+
